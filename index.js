@@ -40,12 +40,15 @@ app.get('/unbox-item', async (req, res) => {
   res.send(unbox_item());
 })
 
+const carBodyImageCID = 'QmVz6CoMLu6iFy87T1fmHRPbX5iF3zuWMetD7DLMAAamWm';
+
 // Define the endpoint create-composite
 app.post('/create-composite', async (req, res) => {
   // Read the CID Array from the request body 
   let cidArray = req.body;
-  // Insert at the beginning of the CID array the CID of the stock car image
-  cidArray.unshift(JSON.parse(JSON.stringify(car)).ImageCID);
+  // Insert at the beginning of the CID array the CID of the car body image
+  cidArray.unshift(carBodyImageCID);
+  //cidArray.unshift(JSON.parse(JSON.stringify(car)).ImageCID);
   console.log(cidArray);
   // Load the images from the CID array by creating the respective URLs 
   let images = await Promise.all(cidArray.map(async cid => {

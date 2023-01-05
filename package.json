@@ -1,5 +1,6 @@
 {
   "name": "cryptowheels-imagecompositionbe",
+  "type": "module",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -18,6 +19,6 @@
     "fs": "^0.0.1-security",
     "ipfs-http-client": "^59.0.0",
     "react-dom": "^18.2.0",
-    "sharp": "^0.31.3"
+    "sharp": "^0.28.3"
   }
 }

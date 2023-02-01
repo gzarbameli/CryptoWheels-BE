@@ -12,11 +12,8 @@ const port = process.env.PORT || 3001;
 import car from './json/car.json' assert { type: "json" };
 import headlights_legendary from './json/headlights_legendary.json' assert { type: "json" };
 import headlights_rare from './json/headlights_rare.json' assert { type: "json" };
-import rim_common_1 from './json/rim_common_1.json' assert { type: "json" };
-import rim_common_2 from './json/rim_common_2.json' assert { type: "json" };
-import rim_common_3 from './json/rim_common_3.json' assert { type: "json" };
-import rim_rare_1 from './json/rim_rare_1.json' assert { type: "json" };
-import rim_rare_2 from './json/rim_rare_2.json' assert { type: "json" };
+import rim_common from './json/rim_common.json' assert { type: "json" };
+import rim_rare from './json/rim_rare.json' assert { type: "json" };
 import rim_legendary from './json/rim_legendary.json' assert { type: "json" };
 import spoiler_common_1 from './json/spoiler_common_1.json' assert { type: "json" };
 import spoiler_common_2 from './json/spoiler_common_2.json' assert { type: "json" };
@@ -40,7 +37,7 @@ app.get('/unbox-item', async (req, res) => {
   res.send(unbox_item());
 })
 
-const carBodyImageCID = 'QmVz6CoMLu6iFy87T1fmHRPbX5iF3zuWMetD7DLMAAamWm';
+const carBodyImageCID = 'QmXAykmgzePy7wgqDqrq7TJ8dJtwPJJkqQjPxgWW5NXRbn';
 
 // Define the endpoint create-composite
 app.post('/create-composite', async (req, res) => {
@@ -130,13 +127,7 @@ function unbox_item() {
           }
           break;
         case 2:
-          switch (itemNumber) {
-            case 1: return rim_common_1;
-            case 2: return rim_common_2;
-            case 3: return rim_common_3;
-            default: break;
-          }
-          break;
+          return rim_common;
         case 3:
           switch (itemNumber) {
             case 1: return wrap_common_1;
@@ -161,12 +152,7 @@ function unbox_item() {
           }
           break;
         case 2:
-          switch (itemNumber) {
-            case 1: return rim_rare_1;
-            case 2: return rim_rare_2;
-            default: break;
-          }
-          break;
+          return rim_rare;
         case 3:
           switch (itemNumber) {
             case 1: return wrap_rare_1;

@@ -39,10 +39,25 @@ app.get('/unbox-item', async (req, res) => {
 
 const carBodyImageCID = 'QmXAykmgzePy7wgqDqrq7TJ8dJtwPJJkqQjPxgWW5NXRbn';
 
+const wrapImagesCID = ["QmfJFKN9HkmKJNJeRJ8qYxbuML21uqCjoEZAvCRPgncsPG", 
+                       "QmbRKUvffgPmPkPYRjYYPcMUFj8ttyLmTz797Z2My6WqEc",
+                       "QmdtDr5U3Ng2kc8EgEpEkLhbVgpmA8tvSsz7xyx7syHs5E",
+                       "QmegyFNSUuuAXitb6UQFC4deLsfWF13AqZx23dw7PfExpb",
+                       "QmR76jNJpnu6v9FAsVxjaMfAGna4ND3yLyFyxY21gvd4Qp",
+                       "QmTsnawy8SCpmN1TmPfFqYEvacMm2VzwxK9eXMpPQSixE6" ]
+
 // Define the endpoint create-composite
 app.post('/create-composite', async (req, res) => {
   // Read the CID Array from the request body 
-  let cidArray = req.body;
+  let request = req.body;
+
+  let cidArray = []
+
+  request.forEach(cid => {
+    if (!wrapImagesCID.includes(cid)) {cidArray.push(cid)}
+    else {cidArray.unshift(cid)}
+  });
+  
   // Insert at the beginning of the CID array the CID of the car body image
   cidArray.unshift(carBodyImageCID);
   //cidArray.unshift(JSON.parse(JSON.stringify(car)).ImageCID);
@@ -58,8 +73,8 @@ app.post('/create-composite', async (req, res) => {
   // Create a new canvas with the desired options
   let canvas = Sharp({
     create: {
-      width: 1000,
-      height: 1000,
+      width: 2732,
+      height: 2048,
       channels: 4,
       background: { r: 255, g: 255, b: 255 }
     }

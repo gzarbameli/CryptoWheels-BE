@@ -41,7 +41,7 @@ const carBodyImageCID = 'QmXAykmgzePy7wgqDqrq7TJ8dJtwPJJkqQjPxgWW5NXRbn';
 
 const wrapImagesCID = ["QmQxKGaNAnK3tinwkEtGvF1CGursvLU1kRon7yPmbxBALp",
   "QmRassW5C71fRfymuZp9M8EEkNGLkSaiuvpRpd79PccKsX",
-  "QmVUHMh35fYb5DWfKkb7rSSaQj7hpKVAKBuLUuobp1YhHn",
+  "QmbGWzM4YntumrYzc4WYvN5XniSSVFLNqCoM1JryoUDQT3",
   "QmVSEPtnZ2e1wLpr3WCctvAvhgcM6AiqUzv7SZj6Gqechn",
   "QmaKhNyBxw1p9BPVCRr1RVSrXpY7CqqetkzjrRpoPvpn7z",
   "QmbyQPP3QoTw5Kc6dB88M2bywxcq2T7oakocdkJGEKeJhg"]

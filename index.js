@@ -39,12 +39,12 @@ app.get('/unbox-item', async (req, res) => {
 
 const carBodyImageCID = 'QmXAykmgzePy7wgqDqrq7TJ8dJtwPJJkqQjPxgWW5NXRbn';
 
-const wrapImagesCID = ["QmfJFKN9HkmKJNJeRJ8qYxbuML21uqCjoEZAvCRPgncsPG", 
-                       "QmbRKUvffgPmPkPYRjYYPcMUFj8ttyLmTz797Z2My6WqEc",
-                       "QmdtDr5U3Ng2kc8EgEpEkLhbVgpmA8tvSsz7xyx7syHs5E",
-                       "QmegyFNSUuuAXitb6UQFC4deLsfWF13AqZx23dw7PfExpb",
-                       "QmR76jNJpnu6v9FAsVxjaMfAGna4ND3yLyFyxY21gvd4Qp",
-                       "QmTsnawy8SCpmN1TmPfFqYEvacMm2VzwxK9eXMpPQSixE6" ]
+const wrapImagesCID = ["QmQxKGaNAnK3tinwkEtGvF1CGursvLU1kRon7yPmbxBALp",
+  "QmRassW5C71fRfymuZp9M8EEkNGLkSaiuvpRpd79PccKsX",
+  "QmVUHMh35fYb5DWfKkb7rSSaQj7hpKVAKBuLUuobp1YhHn",
+  "QmVSEPtnZ2e1wLpr3WCctvAvhgcM6AiqUzv7SZj6Gqechn",
+  "QmaKhNyBxw1p9BPVCRr1RVSrXpY7CqqetkzjrRpoPvpn7z",
+  "QmbyQPP3QoTw5Kc6dB88M2bywxcq2T7oakocdkJGEKeJhg"]
 
 // Define the endpoint create-composite
 app.post('/create-composite', async (req, res) => {
@@ -54,10 +54,10 @@ app.post('/create-composite', async (req, res) => {
   let cidArray = []
 
   request.forEach(cid => {
-    if (!wrapImagesCID.includes(cid)) {cidArray.push(cid)}
-    else {cidArray.unshift(cid)}
+    if (!wrapImagesCID.includes(cid)) { cidArray.push(cid) }
+    else { cidArray.unshift(cid) }
   });
-  
+
   // Insert at the beginning of the CID array the CID of the car body image
   cidArray.unshift(carBodyImageCID);
   //cidArray.unshift(JSON.parse(JSON.stringify(car)).ImageCID);
